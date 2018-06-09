@@ -1,6 +1,6 @@
 import '../scss/main.scss';
+import data from '../data.json';
+import NetworkGraph from './network-graph.js';
 
-import d3Graph from './d3Graph.js';
-
-let graph = new d3Graph('#graph');
-graph.drawRectAngle();
+const graph = new NetworkGraph('#graph', data);
+graph.draw();
