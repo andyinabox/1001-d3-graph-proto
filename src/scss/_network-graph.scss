@@ -1,12 +1,19 @@
 
 .node {
-  body {
+  fill: #fff;
+  p {
     color: black;
+    padding: 2em;
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+    line-height: 1.1em;
+    // background-color: rgba(255, 255, 255, 0.7);
   }
 }
 
 .links {
   line {
-    stroke: grey;
+    stroke: rgba(0, 0, 0, 0.4);
+    stroke-width: 1px;
   }
 }
