@@ -1,4 +1,4 @@
-import d3 from 'd3'
+import * as d3 from 'd3';
 
 export default class d3Graph {
     constructor(id) {
@@ -9,7 +9,7 @@ export default class d3Graph {
                             .attr('x', 10)
                             .attr('y', 10)
                             .attr('width', 50)
-                            .attr('height', 100);
+                            .attr('height', 300);
     }
 
 }
