@@ -24,15 +24,21 @@ export default class NetworkGraph {
 
         let node = this.svg.append("g")
             .attr("class", "nodes")
-            .selectAll("text")
+            .selectAll("foreignObject")
             .data(this.data.nodes)
-            .enter().append("text")
+            .enter().append("foreignObject")
+            .attr("requiredExtensions", "http://www.w3.org/1999/xhtml")
             .attr("class", "node")
-            .text(function (d) { return d.content; })
-            .call(d3.drag()
-                .on("start", this.dragstarted.bind(this))
-                .on("drag", this.dragged.bind(this))
-                .on("end", this.dragended.bind(this)));
+            .attr('width', 300)
+            .attr('height', 400)
+            .html(d => d.content);
+
+        // node.append('body')
+        //     .attr('xmlns', 'http://www.w3.org/1999/xhtml')
+        //         .html(d => d.content);
+        
+        
+
 
         this.simulation
             .nodes(this.data.nodes)
@@ -54,22 +60,21 @@ export default class NetworkGraph {
         }
     }
 
-dragstarted(d) {
-    if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-    d.fx = d.x;
-    d.fy = d.y;
-}
+    dragstarted(d) {
+        if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+    }
 
-dragged(d) {
-    d.fx = d3.event.x;
-    d.fy = d3.event.y;
-}
+    dragged(d) {
+        d.fx = d3.event.x;
+        d.fy = d3.event.y;
+    }
 
-dragended(d) {
-    if (!d3.event.active) simulation.alphaTarget(0);
-    d.fx = null;
-    d.fy = null;
-}
-
+    dragended(d) {
+        if (!d3.event.active) simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+    }
 
 }
