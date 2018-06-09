@@ -1,7 +1,7 @@
 {
-  "name": "d3-es6-webpack-boilerplate",
-  "version": "1.0.0",
-  "description": "D3.js ES6 Webpack boilerplate",
+  "name": "1001-d3-graph-proto",
+  "version": "0.0.1",
+  "description": "Prototype force graph with d3 and text",
   "scripts": {
     "start": "webpack-dev-server --progress --colors",
     "build": "webpack"
